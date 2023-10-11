@@ -16,8 +16,8 @@ class BoxLayoutExample(BoxLayout):
     pass
 
 class Credentials(Screen):
-    def answer_question(self, text):
-        if text.lower() == "deep in the heart of texas.":
+    def answer_question(self, bool):
+        if bool:
             self.manager.current = "welcome"
         else:
             self.ids.test.text = "Invalid Credentials"

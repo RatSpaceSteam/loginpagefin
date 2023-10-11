@@ -65,7 +65,12 @@
             text: "Enter"
             size_hint: .3, .05
             pos_hint: {"x":.55}
-            on_release: root.answer_question(username.text), root.answer_question(password.text)
+            on_release:
+            if username.text = "poopoo" and password.text = "poopoo":
+                root.answer_question(True)
+            else:
+                root.answer_question(False)
+            #root.answer_question(username.text), root.answer_question(password.text)
             #find way to make this^^^ dependent on both being correct
         Label:
             text: ""
