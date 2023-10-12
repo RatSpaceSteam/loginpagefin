@@ -9,7 +9,7 @@ Builder.load_file('LoginPage.kv')
 login_dict = {"us": ["peepee"], "ps": ["poopoo"]}
 
 #registration_req = {}
-#requirments for registration go in there ^^^
+#requirments for registration go in there ^^^^
 class LoginPageApp(App):
     def build(self):
         return LoginPageManager()
