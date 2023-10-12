@@ -21,7 +21,8 @@
         orientation: "vertical"
         spacing: "5dp"
         Label:
-            text: "top"
+            text: ""
+            id: helper
             size_hint: .4, .2
             pos_hint: {"x":.3}
         Label:
@@ -44,7 +45,7 @@
             text: "Enter"
             size_hint: .3, .05
             pos_hint: {"x":.35}
-            onrelease:
+            on_release: root.answer_question(newus.text), root.answer_question(newps.text), root.answer_question(newpsconf.text)
         Label:
             text: ""
             size_hint: .4, .02
