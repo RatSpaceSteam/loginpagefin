@@ -3,6 +3,8 @@
         name: "credentials"
     Welcome:
         name: "welcome"
+    NewAccount:
+        name: "newacc"
 
 <Welcome>:
     Label:
@@ -13,6 +15,72 @@
         pos_hint: {"x":.25}
         #"Looking into this"
         on_release: root.forward()
+
+<NewAccount>:
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "5dp"
+        Label:
+            text: "top"
+            size_hint: .4, .2
+            pos_hint: {"x":.3}
+        Label:
+            text: "Enter New Username"
+            pos_hint: {"x":.1}
+            size_hint: .4, .1
+        Label:
+            text: "Enter New Password"
+            pos_hint: {"x":.1}
+            size_hint: .4, .1
+        Label:
+            text: "Reenter New Password"
+            pos_hint: {"x":.1}
+            size_hint: .4, .1
+        Label:
+            text: "Password must contain at least one: \n- capitalized letter (ex. ABC...XYZ) \n- lowercase letter (ex. abc...xyz) \n- number (1234567890) \n- special character (i.e. ~!@#$%^&*()?)"
+            size_hint: .4, .23
+            pos_hint: {"x":.3}
+        Button:
+            text: "Enter"
+            size_hint: .3, .05
+            pos_hint: {"x":.35}
+            onrelease:
+        Label:
+            text: ""
+            size_hint: .4, .02
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "5dp"
+        Label:
+            text: ""
+            size_hint: .4, .25
+            pos_hint: {"x":.3}
+            id: test
+        TextInput:
+            id: newus
+            text: ""
+            pos_hint: {"x":.5}
+            size_hint: .4, .1
+        TextInput:
+            id: newps
+            text: ""
+            pos_hint: {"x":.5}
+            size_hint: .4, .1
+        TextInput:
+            id: newpsconf
+            text: ""
+            pos_hint: {"x":.5}
+            size_hint: .4, .1
+        Label:
+            text: ""
+            size_hint: .4, .25
+        Label:
+            text: ""
+            size_hint: .4, .05
+            pos_hint: {"x":.55}
+        Label:
+            text: ""
+            size_hint: .4, .05
 
 <Credentials>:
     BoxLayout:
@@ -58,20 +126,15 @@
         Button:
             text: "Register New Account"
             size_hint: .3, .05
+            background_color: 0,0,0
+            color: 1,0,0
             pos_hint: {"x":.55}
-            #on_release: root.answer_question(username.text), root.answer_question(password.text)
-            #create new "register new account" screen for this ^^^
+            on_release: root.forward()
         Button:
             text: "Enter"
             size_hint: .3, .05
             pos_hint: {"x":.55}
-            on_release:
-            if username.text = "poopoo" and password.text = "poopoo":
-                root.answer_question(True)
-            else:
-                root.answer_question(False)
-            #root.answer_question(username.text), root.answer_question(password.text)
-            #find way to make this^^^ dependent on both being correct
+            on_release: root.answer_question(username.text), root.answer_question(password.text)
         Label:
             text: ""
             size_hint: .4, .25
